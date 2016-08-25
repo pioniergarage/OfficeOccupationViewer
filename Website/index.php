@@ -1,4 +1,3 @@
-
 <html>
 	<head>
 	<title>Ist jemand im Launchpad?</title>
@@ -10,16 +9,17 @@
     <br>
 		<div>
 			<?php
-		  // This fancy PHP script is updating the door state
+		  	// This fancy PHP script is displaing the door state
 
+				// Insert your configuration here
 		    $host="127.0.0.1";
 		    $user="test";
 		    $password="test2";
 		    $database="door";
+				$query = "SELECT stat FROM DoorStatus WHERE id = 1;";
 
+				// Connect to MySQL Database
 		    $link = mysql_connect($host, $user, $password);
-
-		    $query = "SELECT stat FROM DoorStatus WHERE id = 1;";
 
 		    // Connect to the database
 		    if (!mysql_select_db($database, $link)) {
@@ -27,8 +27,8 @@
 		        exit;
 		    }
 
+				// Performe querry
 		    $result = mysql_query($query, $link);
-
 		    if (!$result) { // check for errors.
 		        echo "Could not run query: " . mysql_error();
 		    }
@@ -43,26 +43,24 @@
 		    }
 
 			?>
-	</div>
-	<br> <br>
-
-	<h1>Change state:</h1>
-	<br>
-	<button type="button">Click me to change state</button>
-	<p></p>
-	<script type="text/javascript">
-	    $(document).ready(function(){
-	        $("button").click(function(){
-	            $.ajax({
-	                type: 'POST',
-	                url: 'changeState.php?door=toggle',
-	                success: function(data) {
-	                }
-	            });
-							location.reload();
-	   });
-	});
-	</script>
-
+		</div>
+		<br> <br>
+		<h1>Change state:</h1>
+		<br>
+		<button type="button">Click me to change state</button>
+		<script type="text/javascript">
+			// If button is pressed call PHP script with toggle action and reload page
+		  $(document).ready(function(){
+		    $("button").click(function(){
+		      $.ajax({
+		        type: 'POST',
+		        url: 'changeState.php?door=toggle',
+		        success: function(data) {
+		        }
+		      });
+					location.reload();
+		   });
+		});
+		</script>
  </body>
 </html>
