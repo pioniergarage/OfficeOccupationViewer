@@ -1,7 +1,6 @@
 <html>
 	<head>
 	<title>Ist jemand im Launchpad?</title>
-	<link rel="stylesheet" type="text/css" href="style-toggle-button.css"/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	</head>
 	<body>
@@ -11,7 +10,15 @@
 			<?php
 		  	// This fancy PHP script is displaing the door state
 
-				// Insert your configuration here
+            // '' immer nehmen!
+            // Code convention
+            // Bei if 1. Typischer Fall, dann andere
+            // Komplexität vermeiden. if(), if else(), ...
+            // Versuchen HTMl und php trennen.
+            // php storm, suplimeText als Editor
+
+
+			// Insert your configuration here
 		    $host="127.0.0.1";
 		    $user="test";
 		    $password="test2";
@@ -30,13 +37,12 @@
 				// Performe querry
 		    $result = mysql_query($query, $link);
 		    if (!$result) { // check for errors.
-		        echo "Could not run query: " . mysql_error();
-		    }
-		    else{
+		        echo 'Could not run query: ' . mysql_error();
+		    } else {
 		      $row = mysql_fetch_row($result);
-		      if($row[0] == 1){
-		        echo '<h1>Ja</h1> <br><br> <img type="image" src="http://openclipart.org/image/320px/svg_to_png/66421/traffic-semaphore-silhouette-green.png">';
-		      }
+		      if($row[0] == 1) { ?>
+		        <h1>Ja</h1> <br><br> <img type="image" src="http://openclipart.org/image/320px/svg_to_png/66421/traffic-semaphore-silhouette-green.png">;
+		      <?php }
 		      else {
 		        echo '<h1>Nein</h1>  <br><br><img type="image" src="http://openclipart.org/image/320px/svg_to_png/66427/traffic-semaphore-silhouette-red.png">';
 		      }
@@ -50,6 +56,8 @@
 		<button type="button">Click me to change state</button>
 		<script type="text/javascript">
 			// If button is pressed call PHP script with toggle action and reload page
+
+            //TODO rederic
 		  $(document).ready(function(){
 		    $("button").click(function(){
 		      $.ajax({
