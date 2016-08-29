@@ -44,10 +44,10 @@
                             } else {
                               $row = mysql_fetch_row($result);
                               if($row[0] == 1) { ?>
-                                <h1>Ja</h1> <br><br> <img type="image" src="http://openclipart.org/image/320px/svg_to_png/66421/traffic-semaphore-silhouette-green.png">;
+                                <h1>Ja</h1> <br><br> <img type="image" src="http://openclipart.org/image/320px/svg_to_png/66421/traffic-semaphore-silhouette-green.png">
                                 <?php }
                               else { ?>
-                                echo '<h1>Nein</h1>  <br><br><img type="image" src="http://openclipart.org/image/320px/svg_to_png/66427/traffic-semaphore-silhouette-red.png">';
+                                <h1>Nein</h1>  <br><br><img type="image" src="http://openclipart.org/image/320px/svg_to_png/66427/traffic-semaphore-silhouette-red.png">
                               <?php }
                             }
                         ?>
