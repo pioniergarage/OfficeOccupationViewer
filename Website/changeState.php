@@ -1,9 +1,9 @@
 <html>
     <head>
-    <title>Why are you here?</title>
+        <title>Why are you here?</title>
     </head>
     <body>
-    <h1>Nothing to see here!</h1>
+        <h1>Nothing to see here!</h1>
     <br>
         <?php
         // This fancy PHP script is updating the door state in the database
@@ -88,7 +88,6 @@
     else if($_GET["door"] == "toggle"){
         toggle();
     }
-
     ?>
  </body>
 </html>
