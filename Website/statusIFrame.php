@@ -56,26 +56,7 @@
                             }
                         ?>
                     </div>
-                </p> <br>
-                    <h1>Change state:</h1>
-                    <br>
-                    <button type="button">Click me to change state</button>
-                    <script type="text/javascript">
-                        // If button is pressed call PHP script with toggle action and reload page
-
-                        //TODO rederic
-                      $(document).ready(function(){
-                        $("button").click(function(){
-                          $.ajax({
-                            type: 'POST',
-                            url: 'changeState.php?door=toggle',
-                            success: function(data) {
-                            }
-                          });
-                        location.reload();
-                       });
-                    });
-                    </script>
+                </p>
                 </div>
             </div>
         </body>

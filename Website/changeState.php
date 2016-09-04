@@ -62,7 +62,7 @@
         $result = mysql_query($query, $link);
 
         if (!$result) { // check for errors.
-            echo "Could not run query: "  mysql_error();
+            echo "Could not run query: " . mysql_error();
         }
         else{
             // if door is closed change to open and if closed do it the other way
